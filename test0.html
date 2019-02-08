@@ -1,0 +1,53 @@
+<html>
+    <head><title>TO DO lIST</title>
+        
+    </head>
+    <body>
+             <h1>MY TO DO LIST</h1>
+        <input type="text" id="candidate">
+        <button onclick="AddItem()">Add</button>
+        <button onclick="Remove()">Remove</button>
+        <ol id="Mylist"></ol>
+        <script>
+            function AddItem(){
+               
+                
+                var ul = document.getElementById("Mylist");
+                var candidate = document.getElementById("candidate");
+                var li = document.createElement("li"); 
+                li.setAttribute('id',candidate.value);
+                if(candidate.value===''){alert("Please Enter something!");}
+                else{
+                li.appendChild(document.createTextNode(candidate.value));
+                ul.appendChild(li);
+                } 
+        }
+        /*
+        var ul = document.getElementById("Mylist");
+        var li = document.createElement("li");
+        li.setAttribute('id',Mylist);
+        var removeButton = document.createElement('button');
+        removeButton.appendChild(document.createTextNode("remove"));
+        removeButton.setAttribute('onClick','removeName("'+'item'+Mylist+'")');
+        ul.appendChild(removeButton);
+     
+          */
+         
+        /* var remove = document.createElement("Mylist");
+         remove.classList.add('action-btn');
+         remove.classList.add('remove');
+         remove.textContent="Remove";
+         remove.addEventListener('click',function(){
+         item.parentNode.removeChild(item);
+         });
+ */         
+                function Remove(){
+                var ul = document.getElementById("Mylist");
+                var candidate = document.getElementById("candidate");
+                var item = document.getElementById(candidate.value);
+                ul.removeChild(item);
+            }
+            
+        </script>
+    </body>
+</html>
